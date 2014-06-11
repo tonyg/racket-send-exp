@@ -2,9 +2,9 @@
   #:language read
   #:wrapper1
   (lambda (t)
-    `(,#'(require (only-in racket/class send))
-      (require send-exp/lang)
-      ,@(t)))
+    (list* #'(require (only-in racket/class send))
+           '(require send-exp/lang)
+           (t)))
   #:wrapper2
   (let ((send-readtable (make-readtable (current-readtable)
 					#\{
