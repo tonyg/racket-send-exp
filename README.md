@@ -26,7 +26,8 @@ coming *second*.
 
 In addition, using `#lang send-exp ...` adds new syntax for defining
 methods in a class. In addition to the normal ways of defining a
-method, you can also use `(define {method self arg ...} ...)`:
+method, you can also use `(define {method self arg ...} ...)` and
+`(define/override {method self arg ...} ...)`:
 
 ```racket
  #lang send-exp racket
@@ -51,3 +52,6 @@ is equivalent to
  		body ...))
 
 ```
+
+and `define/override` with curly-braces is analogously equivalent to a
+use of the underlying `define/override` syntax.
