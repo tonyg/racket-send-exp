@@ -11,6 +11,8 @@
 					'terminating-macro
 					(lambda (ch in src line col position)
 					  (syntax-case (read-syntax/recursive src in ch #f) ()
+					    [(selector)
+					     #'(lambda (receiver) (send receiver selector))]
 					    [(selector receiver arg ...)
 					     #'(send receiver selector arg ...)])))))
     (lambda (in rd stx?)

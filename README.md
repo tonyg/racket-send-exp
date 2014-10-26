@@ -55,3 +55,9 @@ is equivalent to
 
 and `define/override` with curly-braces is analogously equivalent to a
 use of the underlying `define/override` syntax.
+
+## Abstracting over method calls
+
+In addition to the above, you can use `{method}` anywhere you would
+use `(lambda (receiver) {method receiver})`. This only works for unary
+methods at present.
