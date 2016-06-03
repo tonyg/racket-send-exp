@@ -46,6 +46,11 @@
 	     (define {zot self}
 	       444)
 	     (define {bar self}
-	       123)))
+	       123)
+             (define {add-1 self v}
+               (+ v 1))))
 
 {bar {foo (new x%)}}
+
+(let ((send 999))
+  {add-1 (new x%) send})
